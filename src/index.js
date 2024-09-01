@@ -57,7 +57,7 @@ export class Scene {
     }
 }
 
-function hue(hueValue) {
+export function hue(hueValue) {
     return `hsl(${hueValue}, 70%, 60%)`
 }
 
