@@ -1,7 +1,8 @@
-import { Scene, hue, SceneObject } from "./src";
+import { Scene, hue, SceneObject, Vector2 } from "./src";
 
 export default {
     Scene,
     hue,
-    SceneObject
+    SceneObject,
+    Vector2,
 }

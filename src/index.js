@@ -100,7 +100,7 @@ export class Scene {
     }
 }
 
-class Vector2 {
+export class Vector2 {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -139,7 +139,7 @@ class Vector2 {
         return new Vector2(this.x / mag, this.y / mag);
     }
 }
-class SceneObject {
+export class SceneObject {
     /**
      * @type {Scene} 
      */
@@ -180,5 +180,6 @@ export function hue(hueValue) {
 export default {
     Scene,
     SceneObject,
-    hue
+    Vector2,
+    hue,
 }
