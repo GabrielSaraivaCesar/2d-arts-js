@@ -1,6 +1,7 @@
-import { Scene, hue } from "./src";
+import { Scene, hue, SceneObject } from "./src";
 
 export default {
     Scene,
-    hue
+    hue,
+    SceneObject
 }

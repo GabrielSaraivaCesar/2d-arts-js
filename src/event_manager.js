@@ -15,6 +15,7 @@ export class EventManager {
         this._mouseDragCallbacks = [];
         this._mouseClickCallbacks = [];
         this._mouseHoldCallbacks = [];
+        this._scrollCalbacks = []
         this._setUpMouseEvents();
     }
     
@@ -42,6 +43,11 @@ export class EventManager {
                 });
             }
         });
+        this._referenceElement.addEventListener('wheel', (e) => {
+            this._scrollCalbacks.forEach(callback => {
+                callback(e);
+            });
+        });
     }
 
     clearMouseDragEvent(fn) {
@@ -61,6 +67,12 @@ export class EventManager {
     };
     onMouseHold(callback) {
         this._mouseHoldCallbacks.push(callback);
+    }
+    clearScrollEvent(fn) {
+        this._scrollCalbacks = this._scrollCalbacks.filter(callback => callback !== fn);
+    };
+    onScroll(callback) {
+        this._scrollCalbacks.push(callback);
     }
 
     onNewFrame() {
